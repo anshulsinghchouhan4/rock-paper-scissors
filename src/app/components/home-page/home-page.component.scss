@@ -1,0 +1,118 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem;
+  border: 2px dashed lightsteelblue;
+  border-radius: 10px;
+  background-color: lightgoldenrodyellow;
+  height: 710px;
+  .header {
+    font-size: 4rem;
+  }
+  .choose-mode {
+    width: 80%;
+    span {
+      display: table;
+      margin: 0 auto;
+      font-size: 2rem;
+    }
+    .select-mode {
+      display: flex;
+      justify-content: space-between;
+      button {
+        width: 40%;
+      }
+    }
+    .logo {
+      width: 50%;
+      height: 40%;
+      margin-left: 25%;
+      margin-top: 2%;
+    }
+  }
+  .selected-mode {
+    span {
+      font-size: 2rem;
+    }
+    .player-mode-selected {
+      width: 85vw;
+      height: 50vh;
+      display: flex;
+      justify-content: space-evenly;
+      border: 3px dotted lavender;
+      border-radius: 10px;
+      .player1 {
+        width: 45%;
+        height: 100%;
+        .rock-paper-scissors-1 {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          justify-content: space-evenly;
+          img {
+            width: 20%;
+            height: 20%;
+            cursor: pointer;
+          }
+        }
+      }
+      .player2 {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .computer-mode-selected {
+      width: 85vw;
+      height: 50vh;
+      display: flex;
+      justify-content: space-evenly;
+      border: 3px dotted lavender;
+      align-items: center;
+      border-radius: 10px;
+      .div {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .after-result {
+    width: 50%;
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+.setOpacity {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.final-result {
+  font-size: 2rem;
+}
+
+.division {
+  border-left: 6px solid lavender;
+  height: 100%;
+}
+
+#clock {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: lightgrey;
+  margin: auto;
+}
+
+#seconds {
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 120px;
+}

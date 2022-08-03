@@ -1,0 +1,90 @@
+<div class="main-container">
+  <div class="header mt-2">ROCK PAPER SCISSORS</div>
+  <div
+    class="choose-mode mt-2"
+    *ngIf="!(playerModeSelected || computerModeSelected)"
+  >
+    <span class="mt-2"> Select Play Mode </span>
+    <div class="select-mode mt-4">
+      <button class="btn btn-warning mt-2" (click)="playerMode()">
+        Player VS Computer
+      </button>
+      <button class="btn btn-warning mt-2" (click)="computerMode()">
+        Computer VS Computer
+      </button>
+    </div>
+    <div class="logo">
+      <img
+        src="../../../assets/images/logo.svg"
+        alt="rock paper scissros logo"
+      />
+    </div>
+  </div>
+  <div class="selected-mode" *ngIf="playerModeSelected || computerModeSelected">
+    <div class="player-mode-selected" *ngIf="playerModeSelected">
+      <div class="player1">
+        <span *ngIf="!showResult">Choose Your Move</span>
+        <div class="rock-paper-scissors-1">
+          <img
+            src="../../../assets/images/rock.png"
+            class="rock-image"
+            alt="rock image"
+            (click)="selectUserAction('rock')"
+            [ngClass]="{ setOpacity: setOpacityRock }"
+          />
+          <img
+            src="../../../assets/images/paper.png"
+            class="paper-image"
+            alt="paper image"
+            (click)="selectUserAction('paper')"
+            [ngClass]="{ setOpacity: setOpacityPaper }"
+          />
+          <img
+            src="../../../assets/images/scissors.png"
+            class="scissors-image"
+            alt="scissors image"
+            (click)="selectUserAction('scissors')"
+            [ngClass]="{ setOpacity: setOpacityScissors }"
+          />
+        </div>
+      </div>
+      <div class="division ms-2 me-2"></div>
+      <div class="player2">
+        <div id="clock" *ngIf="showCountDown">
+          <span id="seconds">{{ timeLeft }}</span>
+        </div>
+        <div class="rock-paper-scissors-2" *ngIf="showResult">
+          <img [src]="showAction" style="transform: scaleX(-1)" />
+        </div>
+      </div>
+    </div>
+    <div class="computer-mode-selected" *ngIf="computerModeSelected">
+      <div class="player1">
+        <div id="clock" *ngIf="showCountDown">
+          <span id="seconds">{{ timeLeft }}</span>
+        </div>
+        <div class="rock-paper-scissors-1" *ngIf="showResult && !showCountDown">
+          <img [src]="showAction1"/>
+        </div>
+      </div>
+        <div class="division ms-2 me-2"></div>
+      <div class="player2">
+        <div id="clock" *ngIf="showCountDown">
+          <span id="seconds">{{ timeLeft }}</span>
+        </div>
+        <div class="rock-paper-scissors-2" *ngIf="showResult && !showCountDown">
+          <img [src]="showAction2" style="transform: scaleX(-1)" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="final-result" *ngIf="showResult && !showCountDown">
+    {{ accouncment }}
+  </div>
+  <div class="after-result" *ngIf="showResult && !showCountDown">
+    <button class="btn btn-warning mt-2" (click)="playAgain()">
+      Play Again!
+    </button>
+    <a class="btn btn-warning mt-2" (click)="changeMode()"> Change Mode </a>
+  </div>
+</div>
